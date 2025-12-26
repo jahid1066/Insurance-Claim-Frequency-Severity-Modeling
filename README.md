@@ -62,8 +62,8 @@ The dataset contains the following columns:
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/insurance-claims-modeling.git
-cd insurance-claims-modeling
+ https://github.com/jahid1066/Insurance-Claim-Frequency-Severity-Modeling.git
+cd Insurance-Claim-Frequency-Severity-Modeling
 
 2. Install required packages:
 
