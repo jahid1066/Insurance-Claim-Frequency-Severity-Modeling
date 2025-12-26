@@ -1,109 +1,117 @@
 # Insurance Claims Modeling Project
 
-This project focuses on modeling insurance claims using **Generalized Linear Models (GLM)** for frequency and severity. The aim is to predict the number of claims (frequency) and the claim amount (severity) to calculate the **pure premium** for insurance policies. The project is designed for reproducibility, modularity, and clear demonstration of data analysis and machine learning techniques applied to insurance datasets.
+This project focuses on modeling insurance claims using **Generalized Linear Models (GLM)** for **claim frequency** and **claim severity**. The goal is to predict the expected claim cost (**pure premium**) for insurance policies.
 
+The project follows a **modular, reproducible, and industry-aligned structure**, commonly used in actuarial science, insurance analytics, and data science roles.
 
-## **Dataset**
+---
 
-The dataset contains the following columns:
+## Dataset
 
-- `IDpol`: Policy ID  
-- `ClaimNb`: Number of claims filed  
-- `Exposure`: Policy exposure in years  
-- `VehPower`: Vehicle power (horsepower)  
-- `VehAge`: Vehicle age  
-- `DrivAge`: Driver age  
-- `BonusMalus`: Bonus-malus score  
-- `Density`: Population density in the region  
-- `ClaimAmount`: Claim amount (severity)  
-- `PurePremium`: Calculated as `Frequency * Severity`  
-- Region and vehicle categorical features (`Region[T.Rxx]`, `VehBrand`, etc.)
+The dataset contains the following key variables:
 
+- **IDpol**: Policy ID  
+- **ClaimNb**: Number of claims filed (frequency)  
+- **Exposure**: Policy exposure in years  
+- **VehPower**: Vehicle power  
+- **VehAge**: Vehicle age  
+- **DrivAge**: Driver age  
+- **BonusMalus**: Bonus–malus score  
+- **Density**: Population density of region  
+- **ClaimAmount**: Claim amount (severity)  
+- **PurePremium**: Calculated as Frequency × Severity  
+- **Categorical features**: Region indicators (Region[T.Rxx]), Vehicle brand, fuel type, etc.
 
-## **Methodology**
+---
 
-1. **Exploratory Data Analysis (EDA)**  
-   - Analyzed distribution of claims and claim amounts  
-   - Studied relationships between features and claims  
-   - Handled missing values and performed feature encoding
+## Methodology
 
-2. **Frequency Model (Poisson GLM)**  
-   - Target: `ClaimNb`  
-   - Features: `VehPower`, `VehAge`, `DrivAge`, `BonusMalus`, `Density`  
-   - Offset: `log(Exposure)`  
-   - Performance:
-     ```
-     MSE: 0.0412
-     RMSE: 0.2030
-     R2: 0.0197
-     ```
+### Exploratory Data Analysis (EDA)
 
-3. **Severity Model (Gamma GLM)**  
-   * Target: `ClaimAmount` (only policies with claims > 0)  
-   * Features: `VehPower`, `VehAge`, `DrivAge`, `BonusMalus`, `Density`  
-   * Performance:
-     ```
-     MSE: 66,295,705
-     RMSE: 8,142
-     R2: 0.00064
-     ```
+- Analyzed distribution of claim frequency and severity  
+- Examined relationships between risk factors and claims  
+- Handled missing values and encoded categorical features  
 
-4. **Pure Premium Calculation**  
-   - Predicted claim frequency × predicted severity  
-   - Used as the expected claim amount per policy  
+---
 
-5. **Validation**  
-   - Metrics: MSE, RMSE, R²  
-   - Predictions compared with observed data  
+### Frequency Model (Poisson GLM)
 
+- **Target**: ClaimNb  
+- **Features**: VehPower, VehAge, DrivAge, BonusMalus, Density  
+- **Offset**: log(Exposure)  
 
-## **Installation**
+**Performance Metrics**
+- MSE: 0.0412  
+- RMSE: 0.2030  
+- R²: 0.0197  
 
-1. Clone the repository:
+---
 
-```bash
- https://github.com/jahid1066/Insurance-Claim-Frequency-Severity-Modeling.git
+- **Target**: ClaimAmount (policies with ClaimNb > 0)  
+- **Features**: VehPower, VehAge, DrivAge, BonusMalus, Density  
+
+**Performance Metrics**
+- MSE: 66,295,705  
+- RMSE: 8,142  
+- R²: 0.00064  
+
+---
+
+### Pure Premium Calculation
+
+- **Pure Premium = Predicted Frequency × Predicted Severity**
+- Represents the expected annual claim cost per policy  
+
+---
+
+### Model Validation
+
+- Evaluation using **MSE, RMSE, and R²**
+- Comparison of predicted vs observed values  
+
+---
+
+## Installation
+
+Clone the repository:
+
+git clone https://github.com/jahid1066/Insurance-Claim-Frequency-Severity-Modeling.git
 cd Insurance-Claim-Frequency-Severity-Modeling
-
-2. Install required packages:
-
-pip install -r requirements.txt
-
-3. Launch Jupyter notebooks:
 
 jupyter notebook
 
 
 ## **Usage**
 
-1. Place your dataset in data/raw/insurance_claims.csv
+Place the dataset in data/raw/insurance_claims.csv
 
-2. Run 01_data_exploration.ipynb to explore and visualize the data
+Run data_exploration.ipynb for exploratory analysis
 
-3. Fit frequency and severity models using 02_frequency_model.ipynb and 03_severity_model.ipynb
+Train models using:
 
-4. Validate models and calculate predicted pure premiums using 04_model_validation.ipynb
+frequency_models.ipynb
 
+severity_models.ipynb
 
-## **Skills Demonstrated**
+Validate models and compute pure premiums using model_validation.ipynb
 
-* Data preprocessing and feature engineering
+## Skills Demonstrated
 
-* Exploratory data analysis and visualization
+- Insurance analytics and actuarial modeling
+- Claim frequency and severity modeling
+- Generalized Linear Models (Poisson & Gamma)
+- Statistical evaluation (MSE, RMSE, R²)
+- Data preprocessing and feature engineering
+- Reproducible, modular Python project structure
 
-* Generalized Linear Models (Poisson and Gamma)
+---
 
-* Model evaluation using MSE, RMSE, R²
+## Author
 
-* Insurance analytics (claim frequency and severity modeling)
+**Md Jahidul Islam**
 
-* Modular Python project structure
+---
 
+## License
 
-## **Authors**
-
-Md Jahidul Islam
-
-## **License**
-
-This project is for educational and portfolio purposes.
+This project is for **educational and portfolio purposes**.
