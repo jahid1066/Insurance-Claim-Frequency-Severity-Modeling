@@ -95,7 +95,7 @@ severity_models.ipynb
 
 Validate models and compute pure premiums using model_validation.ipynb
 
-## Skills Demonstrated
+## **Skills Demonstrated**
 
 - Insurance analytics and actuarial modeling
 - Claim frequency and severity modeling
@@ -106,12 +106,12 @@ Validate models and compute pure premiums using model_validation.ipynb
 
 ---
 
-## Author
+## **Author**
 
-**Md Jahidul Islam**
+Md Jahidul Islam
 
 ---
 
-## License
+## **License**
 
 This project is for **educational and portfolio purposes**.
