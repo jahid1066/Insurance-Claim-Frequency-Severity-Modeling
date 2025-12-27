@@ -76,6 +76,7 @@ The dataset contains the following key variables:
 Clone the repository:
 
 git clone https://github.com/jahid1066/Insurance-Claim-Frequency-Severity-Modeling.git
+
 cd Insurance-Claim-Frequency-Severity-Modeling
 
 jupyter notebook
@@ -83,17 +84,17 @@ jupyter notebook
 
 ## **Usage**
 
-Place the dataset in data/raw/insurance_claims.csv
+- Place the dataset in Data/raw/insurance_claims.csv
 
-Run data_exploration.ipynb for exploratory analysis
+- Run data_exploration.ipynb for exploratory analysis
 
-Train models using:
+- Train models using:
 
-frequency_models.ipynb
+- frequency_models.ipynb
 
-severity_models.ipynb
+- severity_models.ipynb
 
-Validate models and compute pure premiums using model_validation.ipynb
+- Validate models and compute pure premiums using model_validation.ipynb
 
 ## **Skills Demonstrated**
 
