@@ -111,8 +111,4 @@ jupyter notebook
 
 Md Jahidul Islam
 
----
-
-## **License**
-
-This project is for **educational and portfolio purposes**.
+--
